@@ -62,7 +62,7 @@
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}"style="position: fixed;
+                    <div class="alert alert-{{ category }}"style="z-index: 9000;position: fixed;
                     bottom: 50%;
                     left:2%;
                     width: 96%;">{{ message }} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
