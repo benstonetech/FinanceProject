@@ -27,8 +27,6 @@ app.config["SESSION_FILE_DIR"] = mkdtemp()
 app.config["SESSION_PERMANENT"] = True
 app.config["SESSION_TYPE"] = "filesystem"
 
-app.config.from_envvar('APPLICATION_SETTINGS')
-
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
 app.secret_key = os.environ.get('SECRET_KEY')
 
