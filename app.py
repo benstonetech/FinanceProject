@@ -10,7 +10,7 @@ from flask_migrate import Migrate, MigrateCommand
 import datetime
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-
+import os
 
 import psycopg2
 
