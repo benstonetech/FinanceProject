@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Transaction</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price/share</th>
+          <th scope="col">Total</th>
+          <th scope="col">Timestamp</th>
+        </tr>
+      </thead>
+      {% for x in history_data %}
+        <tr>
+            <td> {{ x.symbol }} </td> <td>{{ x.trans_type }}</td><td> {{ x.shares }}</td><td> {{ usd(x.price)}} </td>
+            <td> {{ usd(x.shares * x.price) }}</td> <td> {{x.timestamp }}</td>
+        </tr>
+      {% endfor %}
+
+    </table>
+
+    {% if history_data|length < 1 %}
+    <ul class="list-group">
+      <li class="list-group-item"> You haven't made any transactions yet.</li>
+    </ul>
+    {% endif %}
+{% endblock %}

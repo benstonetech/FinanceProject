@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    {% if quote_requested == 1 %}
+        <p> Stock Quote </p>
+        <p> {{company_data.symbol }}</p>
+        <p> {{company_data.name }}</p>
+        <p> {{company_data.price }}</p>
+
+        {% if company_data == None %}
+            Company does not exist on IEX.
+        {% endif %}
+
+        <br>
+    {% endif %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autofocus class="form-control" name="symbol" placeholder="Company Symbol" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Get Quote</button>
+    </form>
+
+
+{% endblock %}

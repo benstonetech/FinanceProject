@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<div style="height: 80vh" class="d-flex align-items-center justify-content-center">
+  <div class="card">
+    <div class="card-body">
+      <form action="/register" method="post">
+  <div class="form-group">
+    <label for="username-input">Username</label>
+    <input type="text" class="form-control" id="username-input" name="username" placeholder="Enter username">
+  </div>
+  <div class="form-group">
+    <label for="password-input">Password</label>
+    <input type="password" class="form-control" id="password-input" name="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="confirm-password-input">Confirm Password</label>
+    <input type="password" class="form-control" id="confirm-password-input" name="confirmation" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Register</button>
+</form>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}
